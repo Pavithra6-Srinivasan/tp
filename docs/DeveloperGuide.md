@@ -57,7 +57,6 @@ The Architecture Diagram below explains the high-level design of CuddleCare.
 
 `Ui`: Handles all user interactions
 
-- Reads user input from the command-line interface
 - Displays output messages, results, and error messages to the user
 
 `Parser`: Parses user input into executable commands
@@ -87,14 +86,13 @@ The Architecture Diagram below explains the high-level design of CuddleCare.
 
 The sequence of interactions for a typical command (e.g., `add-pet n/Milo s/Dog a/3`) is:
 
-1. User enters command through `Ui`
-2. `Ui` passes the input to `CuddleCare`
-3. `CuddleCare` sends input to `Parser` for interpretation
-4. `Parser` creates and returns appropriate `Command` object
-5. `CuddleCare` executes the `Command`
-6. `Command` updates `Model` with new data
-7. `Command` prints success/error message via `Ui`
-8. `CuddleCare` triggers `Storage` to save changes
+1. `CuddleCare` reads user input
+2. `CuddleCare` sends input to `Parser` for interpretation
+3. `Parser` creates and returns appropriate `Command` object
+4. `CuddleCare` executes the `Command`
+5. `Command` updates `Model` with new data
+6. `Command` prints success/error message via `Ui`
+7. `CuddleCare` triggers `Storage` to save changes
 
 ***
 

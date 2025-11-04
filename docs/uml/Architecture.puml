@@ -18,10 +18,9 @@ rectangle CuddleCare_System {
 
 storage "cuddlecare_save.txt"
 
-User -down-> Ui : Input actions
+User -down-> CuddleCare : Input actions
 Ui -up-> User : Display output
 
-Ui -right-> CuddleCare : Sends user input
 CuddleCare -right-> Parser : Parse input
 Parser -up-> CuddleCare : Returns Command
 
@@ -29,7 +28,7 @@ CuddleCare -down-> Command : Execute
 CuddleCare -down-> Model : Manages data
 CuddleCare -right-> Storage : Read/Write
 
-Command -up-> Ui : Print output
+Command -down-> Ui : Print output
 Command -down-> Model : Update data
 
 Storage -down-> "cuddlecare_save.txt" : Write

@@ -74,7 +74,7 @@ A pet with that name already exists.
 * Each pet's name must be unique or user will have to re-enter
   (as seen above).
 * Age must be a number and is in units of years.
-* If input is invalid: `Invalid input. Please try again.`
+* If input is invalid: `Invalid input. Usage: add-pet n/PET_NAME s/PET_SPECIES a/PET_AGE`
 
 ---
 
